@@ -3,3 +3,10 @@
     background-color: #ffffff;
     overflow: scroll;
 }
+
+.content{
+    padding: 5%;
+}
+.content h1{
+    padding: 0;
+}
