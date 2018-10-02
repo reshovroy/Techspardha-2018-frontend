@@ -1,4 +1,50 @@
 .navbar{
-    flex:0 0 20%;
-    background-color: grey;
+	flex:0 0 20%;
+	background-color: grey;
+	display:flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.navbar header{
+	width:100%;
+	flex:0 0 70px;
+	background-color:brown;
+}
+.navbar .search{
+	width:100%;
+	flex:0 0 50px;
+	background-color: teal;
+}
+.navbar .events{
+	width:100%;
+	flex-grow:1;
+	background-color: tomato;
+}
+.navbar .header{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.navbar .header .button{
+	width:50px;
+	height:50px;
+	flex-grow:0;
+	background-color:wheat;
+}
+.navbar .header h2{
+	height:40px;
+	flex-grow:1;
+	background-color:plum;
+}
+
+.navbar .events_list{
+	list-style-type: none;
+}
+.navbar .events_list .events_list_item{
+	height: 60px;
+	font-size:2rem;
+}
+.navbar .events_list a{
+	text-decoration:none;
+	color:black;
 }
