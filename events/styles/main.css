@@ -9,10 +9,13 @@ margin:inherit;
 padding:inherit;
 }
 .wrapper{
-height: 100vh;
+height:100vh;
 width:100vw;
 
 background-color:#343233;
-display: flex;
-flex-direction: row;
+display:flex;
+overflow-x:hidden;
+flex-wrap: nowrap;
+font-family: Helvetica, sans-serif;
+
 }
