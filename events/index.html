@@ -19,16 +19,28 @@
 			<header class="header">
 					<div class="button">
 						<svg class="back_button">
-							<use xlink:href = "img/back.svg#back"></use>
+							<use xlink:href = "img/left-arrow.svg#back"></use>
 						</svg>
 					</div>
 					<h2 class="category_name">Technobyte</h2>
 			</header>
 			<div class="nav_search">
-				<input type="text" class="search_box" placeholder="Search">
+				<div class="search_box">
+					<input type="text" class="search_input" placeholder="Search">
+					<button class="search_button">
+						<svg class="back_button">
+							<use xlink:href = "img/search.svg#search"></use>
+						</svg>
+					</button>
+				</div>
 			</div>
 			<div class="events">
-				<div class="event_heading">Events</div>
+				<div class="event_heading">
+					<span>Events</span>
+					<svg class="event_icon">
+						<use xlink:href = "img/calendar.svg#calendar"></use>
+					</svg>
+				</div>
 				<ul class="events_list">
 					<li class="events_list_item active_event"><a href="#">Event 1</a></li>
 					<li class="events_list_item"><a href="#">Event 2</a></li>
