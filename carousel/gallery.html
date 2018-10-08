@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="bootstrap.min.css" type="text/css" rel="stylesheet"/>
+	<link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+	<div class="jumbotron" id="gallery">
+		<h1 class="display-4 text-center"><small><img src="back.png" id="back-btn"/></small>Gallery</h1>
+		<div class="wrapper">
+			<div class="card-carousel">
+				<div class="my-card">1</div>
+				<div class="my-card">2</div>
+				<div class="my-card">3</div>
+				<div class="my-card">4</div>
+				<div class="my-card">5</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="./jquery.min.js"></script>
+<script src="./bootstrap.min.js"></script>
+<script>
+	$(function(){
+		const $carousel = $('.card-carousel');
+		const $num = $('.card-carousel .my-card');
+		const length = $num.length;
+		let activeNo = (length % 2)? length/2 : (length + 1)/2;
+		activeNo = parseInt(activeNo);
+		let $active = $num.eq(activeNo); 
+		$active.addClass('active');
+		$active.next().addClass('next');
+		$active.prev().addClass('prev');
+		let activeWidth = $active.width();
+		$num.on('click',function(){
+
+			activeWidth = $active.width();
+			console.log(activeWidth)
+			if($(this).hasClass('next')){
+				$carousel.stop(false,true).animate({
+					left:"-="+activeWidth
+				});
+				activeNo +=1;
+			}else if($(this).hasClass('prev')){
+				$carousel.stop(false,true).animate({
+					left:"+="+activeWidth
+				});
+				activeNo -=1;
+			}
+			$(this).removeClass('prev next');
+			$(this).siblings().removeClass('prev next active');
+			$(this).addClass('active');
+			$(this).next().addClass('next');
+			$(this).prev().addClass('prev');
+			
+		})
+		const $window = $(window).on('resize',function(){
+			$carousel.css('left','0px');
+			setTimeout(resize,300);
+			activeWidth = $active.width();
+		})
+		function resize(){
+			
+			activeWidth = $active.width();
+			let totalMove = (activeNo-2) * parseInt(activeWidth)*(-1);
+			$carousel.stop(false,true).animate({
+				left:totalMove+"px"
+			})
+		}
+	})
+</script>
+</html>

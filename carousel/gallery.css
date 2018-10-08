@@ -1,0 +1,64 @@
+#gallery{
+    overflow: hidden;
+}
+.wrapper{
+    margin:10px auto;
+    width:80%;
+    height:100%;
+    overflow: hidden;
+}
+.card-carousel{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.my-card{
+    flex:0 0 800px;
+    height: 600px;
+    background-color:teal;
+    cursor:pointer;
+    transform:scale(1);
+    opacity: 0.4;
+    transition:0.3s;
+    z-index:1;
+}
+
+@media only screen and (max-width:750px){
+    .my-card{
+        flex:0 0 500px;
+        height:400px;
+    }
+    .wrapper{
+        width:100%;
+    }
+    #gallery{
+        padding-left:0;
+        padding-right: 0;
+    }
+}
+@media only screen and (max-width:450px){
+    .my-card{
+        flex:0 0 270px;
+        height:200px;
+    }
+    .wrapper{
+        width:100%;
+    }
+    #gallery{
+        padding-left:0;
+        padding-right: 0;
+    }
+}
+.card-carousel .my-card.active{
+    transform:scale(1);
+    opacity: 1;
+    z-index:10;
+}
+.card-carousel .my-card.next, .card-carousel .my-card.prev{
+    transform:scale(1);
+    opacity: 0.4;
+    z-index:1;
+}
